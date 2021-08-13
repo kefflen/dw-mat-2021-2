@@ -1,0 +1,15 @@
+/Para installar o aplicativo que configura o react
+    npm i -g create-react-app
+
+/Para criar uma aplicação react
+    create-react-app <name>
+
+/Para executar
+    npm start
+
+
+
+.js/Modelo basico de index.js precisa ter
+    ReactDOM.render(<tag></tag>, document.getElementById('root'));
+
+
