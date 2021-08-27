@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        .formata {
+            font-family: 'Courier New', Courier, monospace;
+            color: blue;
+            background-color: powderblue;
+            display: flex;
+            justify-content: center;
+            padding: 5px;
+        }
+        .cls2 {
+            border-radius: 6px;
+            border: 2px solid tomato;
+            background-color: lightcoral;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="root" style="border: 1px dotted red">
+    </div>
+    <p class="formata">Paragrafo criado em html</p>
+    <script type="text/babel">
+        const root = document.getElementById("root")
+        
+        /*
+        
+        const novaDiv = React.createElement('div', {
+            children: 'Div React',
+            className: 'formata'
+        })
+
+        
+        */
+       const novaDiv = (
+           <div className='formata'>Div React com Babel</div>
+       )
+       
+       const className = 'cls2'
+       const children = 'Meu teste de JSX'
+       const props = {
+           className,
+           children,
+       }
+
+
+       const div2 = <div className={className}>{children}</div>
+
+       const div3 = <div {...props}></div>
+
+        const container = (
+            <div>
+                {novaDiv}
+                {div2}
+                {div3}
+            </div>
+        )
+       ReactDOM.render(container, root)
+    </script>
+</body>
+</html>
